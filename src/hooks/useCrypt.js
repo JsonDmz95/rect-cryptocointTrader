@@ -33,6 +33,7 @@ const useCrypt = (label, initialState, options) => {
       <Label>{label}</Label>
       <Combo
         onChange={e => updateState(e.target.value)}
+        value={state}
       >
         <option value="">- Select a crytcoin -</option>
         {options.map((option) => (

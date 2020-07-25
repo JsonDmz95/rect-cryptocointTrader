@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
+import Axios from "axios";
 
 import useCoin from "../hooks/useCoin";
 import useCrypt from "../hooks/useCrypt";
-import Axios from "axios";
+import Error from "./Error"
 
 const Button = styled.button`
   margin-top: 20px;
@@ -26,6 +27,7 @@ const Button = styled.button`
 const Form = () => {
   //Crypt list state
   const [cryptList, saveCryptList] = useState([]);
+  const [error, updateError] = useState(false);
 
   const CURRENTCIES = [
     { cod: "USD", name: "US Dollar" },
@@ -55,8 +57,22 @@ const Form = () => {
     requestAPI();
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(coin === "" || crypt===""){
+      updateError(true);
+      return;
+    }
+
+    updateError(false);
+  }
+
   return (
-    <form>
+    <form
+      onSubmit={handleSubmit}
+    >
+      {error ? <Error message="Error! All the fields are required"/> : null}
       <SelectCoin />
 
       <SelectCrypt />

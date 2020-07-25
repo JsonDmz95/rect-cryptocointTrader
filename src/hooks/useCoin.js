@@ -31,6 +31,7 @@ const useCoin = (label, initialState, options) => {
       <Label>{label}</Label>
       <Combo
         onChange={e => updateState(e.target.value)}
+        value={state}
       >
         <option value="">- Select a currency -</option>
         {options.map((option) => (
