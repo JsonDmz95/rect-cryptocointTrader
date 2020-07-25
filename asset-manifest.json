@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-cryptcoinsTrader/static/css/main.a7eaaa4d.chunk.css",
+    "main.js": "/react-cryptcoinsTrader/static/js/main.3118ce4b.chunk.js",
+    "main.js.map": "/react-cryptcoinsTrader/static/js/main.3118ce4b.chunk.js.map",
+    "runtime-main.js": "/react-cryptcoinsTrader/static/js/runtime-main.b9865bf7.js",
+    "runtime-main.js.map": "/react-cryptcoinsTrader/static/js/runtime-main.b9865bf7.js.map",
+    "static/js/2.aa219e80.chunk.js": "/react-cryptcoinsTrader/static/js/2.aa219e80.chunk.js",
+    "static/js/2.aa219e80.chunk.js.map": "/react-cryptcoinsTrader/static/js/2.aa219e80.chunk.js.map",
+    "index.html": "/react-cryptcoinsTrader/index.html",
+    "precache-manifest.98e67d18c20568682b87c50a27ffc887.js": "/react-cryptcoinsTrader/precache-manifest.98e67d18c20568682b87c50a27ffc887.js",
+    "service-worker.js": "/react-cryptcoinsTrader/service-worker.js",
+    "static/css/main.a7eaaa4d.chunk.css.map": "/react-cryptcoinsTrader/static/css/main.a7eaaa4d.chunk.css.map",
+    "static/js/2.aa219e80.chunk.js.LICENSE.txt": "/react-cryptcoinsTrader/static/js/2.aa219e80.chunk.js.LICENSE.txt",
+    "static/media/cryptocoins.png": "/react-cryptcoinsTrader/static/media/cryptocoins.96e45d69.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9865bf7.js",
+    "static/js/2.aa219e80.chunk.js",
+    "static/css/main.a7eaaa4d.chunk.css",
+    "static/js/main.3118ce4b.chunk.js"
+  ]
+}
