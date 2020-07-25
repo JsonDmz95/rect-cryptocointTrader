@@ -24,7 +24,7 @@ const Button = styled.button`
   }
 `;
 
-const Form = () => {
+const Form = ({updateCoin, updateCrypt}) => {
   //Crypt list state
   const [cryptList, saveCryptList] = useState([]);
   const [error, updateError] = useState(false);
@@ -57,15 +57,21 @@ const Form = () => {
     requestAPI();
   }, []);
 
+  //Form Submiiton
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //Validation
     if(coin === "" || crypt===""){
       updateError(true);
       return;
     }
 
     updateError(false);
+
+    //Update values in the State
+    updateCoin(coin);
+    updateCrypt(crypt);
   }
 
   return (

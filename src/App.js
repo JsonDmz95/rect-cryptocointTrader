@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
+import Axios from "axios";
+
 import image from "./cryptocoins.png";
 import Form from "./Components/Form";
+import Trade from "./Components/Trade";
+import Spinner from "./Components/Spinner";
 
 // Sttyled Components
 const Container = styled.div`
@@ -41,6 +45,32 @@ const Heading = styled.h1`
 // END OF Sttyled Components
 
 function App() {
+  const [coin, updateCoin] = useState("");
+  const [crypt, updateCrypt] = useState("");
+  const [result, updateResult] = useState({});
+  const [loading, updateLoading]= useState(false);
+
+  useEffect(() => {
+    if (coin === "") return;
+
+    const requestAPI = async () => {
+      let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${crypt},ETH&tsyms=${coin}`;
+
+      let answer = await Axios.get(url);
+      // console.log(answer.data.DISPLAY[crypt][coin]);
+      updateLoading(true);
+
+      setTimeout(() => {
+        updateResult(answer.data.DISPLAY[crypt][coin]);
+        updateLoading(false);
+      }, 1500);
+
+      
+    };
+
+    requestAPI();
+  }, [coin, crypt]);
+
   return (
     <Container>
       <div>
@@ -48,7 +78,10 @@ function App() {
       </div>
       <div>
         <Heading>Quote crypt-coins instantly</Heading>
-        <Form />
+        <Form updateCoin={updateCoin} updateCrypt={updateCrypt} />
+        
+        {loading ? <Spinner /> : <Trade result={result} />}
+        
       </div>
     </Container>
   );

@@ -26,7 +26,7 @@ const useCrypt = (label, initialState, options) => {
   const [state, updateState] = useState(initialState);
   // END OF Custom Hook state
 
-  console.log(options);
+  // console.log(options);
 
   const SelectCrypt = () => (
     <Fragment>
